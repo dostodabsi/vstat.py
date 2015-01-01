@@ -7,10 +7,13 @@ from math import sqrt, acos, sin, cos, pi
 def vstat(n, p, Rsq):
     Rsq = .0001 if Rsq <= 0 else Rsq
 
-    r = ((p - 1) * (1 - Rsq)) / ((n - p) * Rsq)
+    try:
+        r = ((p - 1) * (1 - Rsq)) / ((n - p) * Rsq)
+    except ZeroDivisionError:
+        r = float('inf')
+
     g = min(r, 1)
     g = .5001 if .4999 < g < .5001 else g
-
     
     z = (g - sqrt(g - g**2)) / (2*g - 1)
     alpha = acos((1 - z) / sqrt(1 - 2*z * (1 - z)))
@@ -21,3 +24,10 @@ def vstat(n, p, Rsq):
         sin(alpha)**(p - 1)))
 
     return v
+
+
+def sample_size(p, Rsq, power=.8):
+    n = p
+    while vstat(n, p, Rsq) <= power:
+        n += 1
+    return n

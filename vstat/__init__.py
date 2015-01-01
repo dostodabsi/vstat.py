@@ -1,1 +1,1 @@
-from .vstat import vstat
+from .vstat import vstat, sample_size
