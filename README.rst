@@ -13,18 +13,18 @@ install and run
 
 install with 
 
-``
+```
 [sudo] pip install vstat
-``
+```
 
 import with
 
-``
+```
 from vstat import vstat
-``
+```
 
 and run with
 
-``
+```
 vstat(120, 4, .05)
-``
+```
