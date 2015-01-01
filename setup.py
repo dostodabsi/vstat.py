@@ -6,7 +6,7 @@ def readme():
         f.read()
 
 setup(name="vstat",
-      version="0.2",
+      version="0.3",
       description="Implementation of the v-statistic",
       url="https://github.com/dostodabsi/vstat.py",
       author="Fabian Dablander",

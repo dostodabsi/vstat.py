@@ -21,11 +21,17 @@ install with
 import with
 
 ```
-from vstat import vstat
+import vstat
 ```
 
-and run with
+and calculate v with
 
 ```
-vstat(120, 4, .05)
+vstat.vstat(120, 4, .05)
+```
+
+or calculate necessary (total n, n per predictor) for a specific v with
+
+```
+vstat.sample_size(3, .05, v=.8)
 ```

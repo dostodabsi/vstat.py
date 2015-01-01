@@ -26,8 +26,8 @@ def vstat(n, p, Rsq):
     return v
 
 
-def sample_size(p, Rsq, power=.8):
+def sample_size(p, Rsq, v=.8):
     n = p
-    while vstat(n, p, Rsq) <= power:
+    while vstat(n, p, Rsq) <= v:
         n += 1
-    return n
+    return (n, round(n / p, 2))
