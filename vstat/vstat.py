@@ -9,7 +9,7 @@ def vstat(n, p, Rsq):
 
     r = ((p - 1) * (1 - Rsq)) / ((n - p) * Rsq)
     g = min(r, 1)
-    g = .5001 if 4999 < g < .5001 else g
+    g = .5001 if .4999 < g < .5001 else g
 
     
     z = (g - sqrt(g - g**2)) / (2*g - 1)
